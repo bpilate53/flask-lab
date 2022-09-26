@@ -1,0 +1,21 @@
+{%extends 'base.html' %}
+<section>
+    {%block title %} {{task['name']}} - Update {%endblock%} {%block body%} {% if task['error'] %}
+    <div class="alert alert-danger" role="alert">
+        {{task['error']}}
+    </div>
+    {% else %}
+    <form method="post">
+        <div class="form-group">
+            <input type="text" name="oldname" value="{{task['name']}}" hidden>
+            <label for="taskname">Task Name</label>
+            <input type="text" name="taskname" class="form-control" id="taskname" value="{{request.form['name'] or task['name']}}" placeholder="{{request.form['name'] or task['name']}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    <form action="{{ url_for('todo.delete', name=task['name']) }}" method="post">
+        <input class="btn btn-danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+    </form>
+    {% endif %}
+</section>
+{%endblock%}

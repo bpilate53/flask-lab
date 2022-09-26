@@ -1,0 +1,12 @@
+{%extends 'base.html' %}
+<section>
+    {%block title %} Add {%endblock%} {%block body%}
+    <form method="post">
+        <div class="form-group">
+            <label for="taskname">Task Name</label>
+            <input type="text" name="taskname" class="form-control" id="taskname">
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</section>
+{%endblock%}

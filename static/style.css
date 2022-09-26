@@ -1,0 +1,15 @@
+.relative {
+    position: relative;
+}
+
+.position-end {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+}
+
+.title {
+    padding: 10px;
+    background-color: #0c0c68;
+    color: white;
+}
